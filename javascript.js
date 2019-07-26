@@ -5,9 +5,11 @@ const rl = readline.createInterface({
     terminal: false
 });
 
-rl.on('line', function (line) {
+const lines = []
 
-    console.log(line)
+rl.on('line', (line) => lines.push(line));
+rl.on('close', (line) => process(lines))
 
-
-})
+function process(lines) {
+    console.log(lines)
+}
